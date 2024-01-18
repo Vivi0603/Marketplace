@@ -1,0 +1,31 @@
+<form method="POST" id='updateproductform' action="/product/updateproducts/{{product._id}}" >
+  <div class="productadvertisement">
+  <label for="productName">
+    Product Name:
+    <input id="productName" type="text" name="productName"  placeholder={{product.productName}} >
+  </label><br><br>
+  <label for="description">Description
+    <input id="description" type="text" name="description"  placeholder={{product.description}} >
+  </label><br><br>
+  <label for="pet-select">Choose the product category</label>
+
+<select name="category" id="product-select">
+    <option value="">--Please choose an option--</option>
+    <option value="Electronics">Electronics</option>
+    <option value="Furniture">Furniture</option>
+    <option value="Toys & games">Toys & games</option>
+    <option value="Clothing">Clothing</option>
+    <option value="Vehicles">Vehicles</option>
+    <option value="other">other</option>
+</select><br><br>
+  <label for="price">
+    Price ($)
+    <input id="price" type="number" name="price" min="0" placeholder={{product.price}} >
+  </label>
+   <div id="error">
+  <ul id="errorList"></ul>
+</div><br><br>
+  <button type="submit" id="button">Submit</button><br>
+ <script src="/public/js/updateproduct.js"></script>
+  </div>
+</form>

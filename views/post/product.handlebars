@@ -1,0 +1,59 @@
+<div>
+  <h1>Product Details:</h1>
+  <div class="product-info">
+    <div class="product-image">
+      <div class="forcenter">
+        <img src={{prod.image}} width="175" height="175" />
+          <h3>Product Name: {{prod.productName}}</h1>
+            <h4>Description: {{prod.description}}</h4>
+            <h4>Price($): {{prod.price}}</h4>
+
+            <h5><a href="productdetails/{{this._id}}"> {{this.productName}} </a></h5>
+            <h6>{{this.productCategory}}</h6>
+            <h6>{{this.price}}</h6>
+
+            <form action="/product/{{prod._id}}" id="commentForm" method="post">
+            <label class="lol" for="palstr">Enter your comment</label><br>
+
+          
+            <textarea id="phrase" name="phrase" style="border:solid" placeholder="Your views!" class='full-width-input' required></textarea>
+            <br><button type="submit">Submit</button>
+            </form>
+            <br><br>
+            <form action="/cart/addToCart/{{prod._id}}"> 
+                <input type="submit" value="Add to Cart">
+            </form>
+
+            {{#if error}}
+              <p>{{error}}</p>
+            {{/if}}
+      </div>
+    </div>
+    {{#if error}}
+    <p>{{error}}</p>
+    {{/if}}
+        
+    
+    <div id="error">
+      <ul id="errorList"></ul>
+    </div>
+    {{#if error}}
+      <div class="login-error">
+        <p>{{error}}</p>
+      </div>
+    {{/if}}
+    <div class="forcenter">
+      <h5>Comments:</h5>
+      <script src="/public/js/comment.js"></script>
+      <ul style ="list-style: none">
+      {{#each comments}}
+        <li>{{this}}</li>
+      {{/each}}
+    </ul>
+    </div>
+    </div>  
+</div>
+ <div class="ss-box ss-grow" data-ss-social="WhatsApp,Email"></div>
+ {{!-- <div class="ss-box" data-ss-link="http://localhost:3000/product/productdetails/{{prod._id}}"></div> --}}
+
+        

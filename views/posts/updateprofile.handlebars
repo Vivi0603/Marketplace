@@ -1,0 +1,46 @@
+<div class="forcenter1">
+    <form action="/user/updateProfile" method="post" id="updateprofile">
+        <div class="form-elem">
+            <label for="name">Name:</label>
+                <input name="name" id="name" type="text" value="{{name}}" placeholder="{{user.name}}" minlength="3"  >
+                <br><br>
+
+            <label for="address">Address:</label>
+                <input name="address" id="address" type="text" value="{{address}}" placeholder="{{user.address}}" minlength="5">
+                <br><br>
+
+            <label for="phoneNumber">Phone Number:</label>
+            <input name="phoneNumber" id="phoneNumber" type="text" value="{{phoneNumber}}"
+                    placeholder="{{user.phoneNumber}}" ><br><br>
+
+            <label for="email">Email:</label>
+                <input name="email" id="email" type="text" value="{{email}}" placeholder="{{user.email}}" ><br><br>
+
+            <label for="password">Password:</label>
+            <input name="password" id="password" type="password" value="{{password}}"
+                placeholder=" 6 characters minimum"><br><br>
+            
+            <input type="submit" value="Update">
+            <div id="error">
+                <ul id="errorList"></ul>
+            </div>
+
+            {{#if error}}
+            <div class="login-error">
+                <p>{{error}}</p>
+            </div>
+            {{/if}}
+        </div>
+    </form>
+</div>
+<div>
+    <ol>
+        {{#each products}}
+        <li><img src={{this.image}} width="140" height="140" /></li>
+        Name: {{this.productName}}<br>
+        Price($):  {{this.price}}<br>
+        <a href="/product/updateProduct/{{this._id}}">Edit</a> <a href="/product/delete/{{this._id}}">Delete</a>
+        {{/each}}
+    </ol>
+    <script src="/public/js/updateprofile.js"></script>
+</div>

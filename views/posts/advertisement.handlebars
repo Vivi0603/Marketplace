@@ -1,0 +1,41 @@
+<br><br>
+<h2 class="centered">Post your product</h2><br><br>
+<form method="POST" id='Avertisementform' action="/product/advertisement/upload" enctype="multipart/form-data">
+  <div class="productadvertisement">
+  <label for="productName">
+    Product Name:
+    <input id="productName" type="text" name="productName" placeholder="Product Name" required>
+  </label><br><br>
+  <label for="description">Description
+    <input id="description" type="text" name="description" placeholder="Description" required>
+  </label><br><br>
+  <label for="product-select">Choose a category:</label>
+
+<select name="category" id="product-select" required>
+    <option value="">--Please choose an option--</option>
+    <option value="Electronics">Electronics</option>
+    <option value="Furniture">Furniture</option>
+    <option value="Toys & games">Toys & Games</option>
+    <option value="Clothing">Clothing</option>
+    <option value="Vehicles">Vehicles</option>
+    <option value="other">Other</option>
+</select>
+<br><br>
+  <label for="price">
+    Price ($)
+    <input id="price" type="number" name="price" min="1" placeholder="Enter your price for product" required>
+  </label>
+   <div id="error">
+  <ul id="errorList"></ul>
+</div><br><br>
+  <label for="productImg">Upload Images for your product:</label><br><br>
+  &emsp;&emsp;&emsp;&emsp;
+  <input id="image"  name="productImg" type="file" accept=".png, .jpeg, .jpg" required><br><br>
+  <button type="submit" id="button">Submit</button><br>
+  </div>
+</form>
+
+{{#if errors}}
+<p id="cl">{{error}}</p>
+{{/if}}
+    <script src="/public/js/advertisement.js"></script>

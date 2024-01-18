@@ -1,0 +1,9 @@
+<div class="forcenter1">
+{{#each orders}}
+    <h4>Date of Purchase: {{this.datePurchased}}</h4>
+    <h4>Price ($): {{this.totalPrice}}</h4>
+    <form action="/cart/orderDetails/{{this._id}}" method="get">
+    <input type="submit" value="Check order details">
+</form>
+{{/each}}
+</div>

@@ -1,0 +1,88 @@
+<div class="jumbotron text-center">
+  <br>
+  <br>
+  <p style="font-size:26px;">Marketplace is a platform for people who wants to buy or sell new/used products
+    Users who wants to buy any product can explore the list of products according to the
+    category and prices and they can also find the seller details on the website
+    In the same way, the users who wants to sell their product can post the
+    advertisement of the product they want to sell by adding the relevant information of
+    the product.
+  </p>
+</div>
+
+<div class="row">
+<input type="submit" value="Explore Products" />
+</form>
+<form action="product/advertisement" method="get">
+<input type="submit" value="Post an advertisement" />
+</form>
+<p>{{error}}</p>
+</div>
+
+  <div class="col-sm-4">
+    <br><br><br><br>
+    <h3 style="color:red;">// Add one image here</h3>
+    <h2> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Looking for Anything?</h2>
+    <br>
+    <p>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      {{!--Add Image --}}
+      You can explore our product directory and search for anything you want! at no extra charge!
+    </p>
+    <form action="/product/exploreproduct" method="get">
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <input type="submit" value="Explore Products" />
+    </form>
+    <br>
+  </div>
+  <div class="col-sm-4">
+    <br><br><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    {{!--Add Image --}}
+    <h3 style="color:red;">// Add one image here</h3>
+    <h2>&nbsp;Want to sell your product?</h2>
+    <br>
+    <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;You can post an advertisement of your product over here and can
+      sell it. You can do it for free now!</p>
+    <form action="/product/advertisement" method="get">
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <input type="submit" value="Post an advertisement" />
+    </form>
+  </div>
+
+  <div class="col-sm-4">
+    {{!-- Find whether u is allowed? --}}
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="public\assets\login.jpg" alt="MarketPlaceLogo" width="250"
+      height="260">
+    <h2><u>Login here:</u></h2>
+    <form method="POST" id="login-form" action="/login">
+      <div class="form-elem">
+        <label for="email">Email:</label>
+        <input name="email" id="email" type="text" value="{{email}}" placeholder="Enter your Email Address!" /><br><br>
+        <label for="password">Password:</label>
+        <input name="password" id="password" type="password" placeholder="Enter your Password" />
+        <br>
+        <br>
+        {{!-- Find replacement for &nbsp --}}
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <button type="submit">Login</button>
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="/" class="carrd-link"> Forget Password?</a>
+        <br>
+        <br>
+        <h3>New Here?</h3><a href="/signup" class="carrd-link">Click here to Sign-up</h3>
+      </div>
+    </form>
+  </div>
+</div>
+{{!-- <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+        crossorigin="anonymous"></script> --}}
+ 
+ {{/if}}
+ 
+ 
+ 
+ 
+
+        
+  

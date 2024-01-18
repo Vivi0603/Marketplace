@@ -1,0 +1,58 @@
+<div> 
+    <br>
+    <br>
+    <table class="table table-hover">
+      <h1>&nbsp;&nbsp;Product Details:</h1>
+      <thead class="thead-light">
+        <tr>
+          <th scope="col" style="font-size:26px;">Product Image</th>
+          <th scope="col" style="font-size:26px;">Product Description</th>
+          {{!-- <th scope="col">Product Price</th> --}}
+        </tr>
+      </thead>
+      <tbody>
+        {{#each productList}}
+        <section class="products">
+          <div class="product-card">
+            <tr class="clickable-row" id="{{this._id}}" data-href="productdetails/{{this._id}}">
+              <div class="product-info">
+                <div class="product-image">
+                  <td style="width:30%"><img src= {{this.image}}/></td>
+                </div>
+                <td style="width:70%">
+                  <h5><a href="productdetails/{{this._id}}"> {{this.productName}}</a></h5>
+                  <h6>{{this.productCategory}}</h6>
+                  <h6>{{this.price}}</h6>
+                </td>   
+              </div>
+            </tr>
+          </div>
+        </section>
+        {{/each}}
+      </tbody>
+    </table>
+
+    <table class="table table-hover">
+      <thead class="thead-light"></thead>
+      <tr>
+        <div class="addcomments">
+          <br><br><br><br>
+            <form  action="/product/{{prod._id}}" id="staticForm" method="post">
+              <label  class="lol" for="palstr">Enter your comment below</label>
+              <br>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<textarea  id="comm" name="phrase" placeholder="Your views!"  class='full-width-input'></textarea>
+                {{#if error}}
+                <p>{{error}}</p>
+                {{/if}}
+                <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button type="submit">Submit</button>
+            </form>
+            <br><br><h5>Comments:</h5>
+            <ul>
+              {{#each comments}}
+                <li>{{comment}}</li>
+              {{/each}}
+            </ul>
+        </div>
+      </tr>
+    </table>
+</div> 

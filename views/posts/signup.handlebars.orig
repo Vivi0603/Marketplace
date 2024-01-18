@@ -1,0 +1,41 @@
+<main>
+<div class="login-container" id = "signup-container">
+    <div class="login-header" id = "signup-header">
+        <h2>&nbsp;&nbsp;User Sign Up</h2>
+    </div>
+    <div id = "signupError" class = "signError" hidden>
+        
+    </div>
+    <form method="POST" id="signup-form" action="/signup">
+        <div class="form-elem">
+            <label for="name">Name:</label>
+            <input name="name" id="name" type="text" value="{{name}}" placeholder = "4 characters minimum">
+        </div>
+        <div class="form-elem">
+            <label for="address">Address:</label>
+            <input name="address" id="address" type="text" value="{{address}}" placeholder = "Full Address Please">
+        </div> 
+        <div class="form-elem">
+            <label for="phoneNumber">Phone Number:</label>
+            <input name="phoneNumber" id="phoneNumber" type="text" value="{{phoneNumber}}" placeholder = "Your Phone Number">
+        </div> 
+        <div class="form-elem">
+            <label for="email">Email:</label>
+            <input name="email" id="email" type="text" value="{{email}}" placeholder = "Your Email">
+        </div>
+        <div class="form-elem">
+            <label for="password">Password:</label>
+            <input name="password" id="password" type="password" value="{{password}}" placeholder = " 6 characters minimum">
+        </div><br>
+        &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;<button type="submit">Sign up</button><br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/" class="card-link">Already have an account?</a>
+    </form>
+</div>
+{{#if error}}
+    <div class="login-error">
+        <p>{{error}}</p>
+    </div>
+{{/if}}
+</main>
+

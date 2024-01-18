@@ -1,0 +1,74 @@
+<section class="vh-100" style="background-color: #eee;">
+
+  <div class="product-filter">
+
+    <div class="container m-5">
+      <h1>Search Here:</h1>
+
+      <div class="float-container">
+        <div class="float-child">
+          <div class="">
+            <label for="myInput"></label>
+            <input style=" display:inline-block; width:100%" height="48" type="text" class="form-control" id="myInput" onkeyup="fName('myInput',0)"
+              placeholder="New things are waiting for you!">
+          </div>
+        </div>
+
+        <div style="width:250px;
+          <div class="collection-sort filter">
+            <label>Filter by:</label>
+            <select class="dropsize">
+              <option value="/">All </option>
+            </select>
+          </div>
+          <div class="collection-sort sort">
+            <label>Sort by:</label>
+              <select class="dropsize">
+                <option value="/">Featured</option>
+              </select>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container m-5">
+    <table class="table table-hover">
+      <h1>List of Products:</h1>
+      <thead class="thead-light">
+        <tr>
+          <th scope="col" style="font-size:26px;">Product Image</th>
+          <th scope="col" style="font-size:26px;">Product Name</th>
+          <th scope="col" style="font-size:26px;">Category</th>
+          <th scope="col" style="font-size:26px;">Price</th>
+          {{!-- <th scope="col">Product Price</th> --}}
+        </tr>
+      </thead>
+      <tbody>
+        {{#each productList}}
+        <tr class="clickable-row" id="{{this._id}}" data-href="productdetails/{{this._id}}">
+          <div class="product-card">
+            <tr class="clickable-row" id="{{this._id}}" data-href="productdetails/{{this._id}}">
+              <div class="product-info">
+                <div class="product-image">
+                  <td style="width:30%"><img src= {{this.image}}/></td>
+                </div>
+                <td style="width:40%">
+                  <h5><a href="productdetails/{{this._id}}"> {{this.productName}}</a></h5>
+                </td>   
+                 <td style="width:20%">
+                  <h6>{{this.productCategory}}</h6>
+                </td>   
+                 <td style="width:20%">
+                  <h6>{{this.price}}</h6>
+                </td>   
+              </div>
+            </tr>
+          </div>
+        </section>
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
+  <div class="container m-5" id="no-result" hidden="">
+    <p><span class="fa fa-exclamation-circle">&#0160;</span>No results found</p>
+  </div>
